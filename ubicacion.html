@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ubicación — MaguiCreaciones</title>
+                <link rel="icon" href="favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16.png">
+        <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav id="mainNav">
+                <div class="nav-container">
+                    <a href="index.html" class="logo">Magui<em>Creaciones</em></a>
+                    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="nav-item has-dropdown">
+                            <a href="all_products.html">Productos</a>
+                            <button class="dropdown-toggle" aria-expanded="false" aria-label="Mostrar categorías de productos">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                            </button>
+                            <div class="mega-dropdown">
+                                <div class="mega-cat">
+                                    <button class="mega-cat__toggle" aria-expanded="false">
+                                        Para Amantes del Mate
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                                    </button>
+                                    <div class="mega-subcat">
+                                        <a href="all_products.html#set-matero">Set Matero</a>
+                                        <a href="all_products.html#matero-yerbera-portamate">Bolso Matero, Yerbera y Portamate</a>
+                                    </div>
+                                </div>
+                                <a class="mega-cat__link" href="all_products.html#bolsos-mochilas-bandoleras">Bolsos, Mochilas y Bandoleras</a>
+                                <a class="mega-cat__link" href="all_products.html#cuidado-rostro">Cuidado del Rostro</a>
+                            </div>
+                        </li>
+                        <li><a href="charms.html">Charms</a></li>
+                        <li><a href="ubicacion.html">Ubicación</a></li>
+                        <li><a href="ayuda.html">Ayuda</a></li>
+                        <li><a href="contact.html" class="nav-cta">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+        <main>
+            <section class="page-intro">
+                <div class="container">
+                    <span class="eyebrow">Punto de Venta Físico</span>
+                    <h1>Ubicación</h1>
+                </div>
+            </section>
+
+            <section class="section" style="padding-top: 0px;">
+                <div class="container">
+                    <div style="max-width:640px;margin:0 auto;padding:2.5rem;background:var(--cream-soft);border:1px solid var(--line);border-radius:var(--radius-lg);text-align:center;">
+                        <span class="eyebrow" style="justify-content:center;">Encontranos</span>
+                        <p style="margin-top:0.8rem;color:var(--ink-soft);">Los Sábados en PLAZA DORREGO (Humberto 1° 400) <br>y los Domingos en Defensa 360 (Feria de San Telmo)</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Magui<em>Creaciones</em></a>
+                    <p>Bolsos, carteras y bolsos materos hechos a mano, de a uno por vez.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Explorar</h4>
+                        <a href="all_products.html">Productos</a>
+                        <a href="charms.html">Charms</a>
+                        <a href="ubicacion.html">Ubicación</a>
+                        <a href="ayuda.html">Ayuda</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contacto</h4>
+                        <a href="https://www.instagram.com/maguicreaciones_" target="_blank" rel="noopener noreferrer">@maguicreaciones_6</a>
+                        <a href="https://wa.me/5491122859074" target="_blank" rel="noopener noreferrer">+54 9 11 2285-9074</a>
+                        <a href="mailto:magalibivian@gmail.com" target="_blank" rel="noopener noreferrer">magalibivian@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container footer-bottom">
+                <span>© 2026 MaguiCreaciones. Todos los derechos reservados.</span>
+                <span>Hecho a mano en Buenos Aires</span>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

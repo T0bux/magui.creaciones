@@ -50,6 +50,11 @@
 }
 
 :root {
+    /* Forzar SIEMPRE modo claro: evita que iOS/Android/navegadores
+       reinterpreten u oscurezcan automáticamente colores, formularios,
+       scrollbars, etc. cuando el dispositivo tiene el modo oscuro activado */
+    color-scheme: light only;
+
     /* Tipografía */
     --font-display: 'Prata', serif;
     --font-body: 'Geograph', 'Segoe UI', sans-serif;
@@ -72,6 +77,20 @@
     --radius-md: 18px;
     --radius-sm: 10px;
     --container: 1180px;
+}
+
+/* Red de seguridad: si algún navegador ignora color-scheme e igual
+   intenta aplicar su propio esquema oscuro, reforzamos acá los
+   colores base para que NUNCA cambien. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: light only;
+    }
+
+    html, body {
+        background-color: var(--cream) !important;
+        color: var(--ink) !important;
+    }
 }
 
 * {
@@ -1168,3 +1187,150 @@ footer {
 }
 
 .page-intro .eyebrow { justify-content: center; }
+
+/* =========================================================
+   CONTACTO — métodos de contacto + preguntas frecuentes
+   ========================================================= */
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    background: var(--cream-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 1.8rem 1.6rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px -18px rgba(var(--shadow-color), 0.32);
+    border-color: transparent;
+}
+
+.contact-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--sage-pale);
+    color: var(--sage-dark);
+    flex-shrink: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-card:hover .contact-card__icon {
+    background: var(--sage-dark);
+    color: var(--cream-soft);
+}
+
+.contact-card__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-card h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: var(--ink);
+}
+
+.contact-card__value {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--clay);
+    word-break: break-word;
+}
+
+.contact-card p.contact-card__blurb {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: -0.4rem;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--cream-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 0.3rem 1.4rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-item[open] {
+    border-color: transparent;
+    box-shadow: 0 14px 30px -18px rgba(var(--shadow-color), 0.28);
+}
+
+.faq-item summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.02rem;
+    color: var(--ink);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--sage-pale);
+    color: var(--sage-dark);
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.faq-item__icon svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-item__icon {
+    background: var(--clay);
+    color: var(--cream-soft);
+}
+
+.faq-item[open] .faq-item__icon svg {
+    transform: rotate(45deg);
+}
+
+.faq-item__answer {
+    padding: 0 0 1.3rem;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 62ch;
+}

@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light only">
+        <meta name="supported-color-schemes" content="light">
+        <meta name="theme-color" content="#F2EDDD">
         <title>Contacto — MaguiCreaciones</title>
-                <link rel="icon" href="favicon.ico" sizes="any">
+        <link rel="icon" href="favicon.ico" sizes="any">
         <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16.png">
         <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
@@ -45,7 +48,6 @@
                         </li>
                         <li><a href="charms.html">Charms</a></li>
                         <li><a href="ubicacion.html">Ubicación</a></li>
-                        <li><a href="ayuda.html">Ayuda</a></li>
                         <li><a href="contact.html" class="nav-cta">Contacto</a></li>
                     </ul>
                 </div>
@@ -56,17 +58,117 @@
         <main>
             <section class="page-intro">
                 <div class="container">
-                    <span class="eyebrow">Ante cualquier duda</span>
+                    <span class="eyebrow">Estamos para ayudarte</span>
                     <h1>Contacto</h1>
-                    <p>¿Tenés dudas sobre un pedido o querés encargar una pieza a medida? Escribinos.</p>
+                    <p>¿Tenés dudas sobre un pedido, un cambio o querés encargar una pieza a medida? Escribinos por el medio que prefieras.</p>
                 </div>
             </section>
 
+            <!-- ===== Métodos de contacto ===== -->
             <section class="section" style="padding-top:0;">
                 <div class="container">
-                    <div style="max-width:640px;margin:0 auto;padding:2.5rem;background:var(--cream-soft);border:1px solid var(--line);border-radius:var(--radius-lg);text-align:center;">
-                        <span class="eyebrow" style="justify-content:center;">En construcción</span>
-                        <p style="margin-top:0.8rem;color:var(--ink-soft);">Esta sección se está tejiendo todavía. Volvé pronto para ver el contenido completo.</p>
+                    <div class="contact-methods">
+                        <a class="contact-card" href="https://www.instagram.com/maguicreaciones_" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+                            </span>
+                            <h3>Instagram</h3>
+                            <span class="contact-card__value">@maguicreaciones_6</span>
+                            <p class="contact-card__blurb">Mirá las últimas piezas y escribinos por DM.</p>
+                        </a>
+
+                        <a class="contact-card" href="https://wa.me/5491122859074" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7"/><path d="M20 12a8 8 0 0 1-11.3 7.3L5 20l1-3.4A8 8 0 0 1 20 12Z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5"/></svg>
+                            </span>
+                            <h3>WhatsApp</h3>
+                            <span class="contact-card__value">+54 9 11 2285-9074</span>
+                            <p class="contact-card__blurb">Respondemos rápido, de lunes a sábado.</p>
+                        </a>
+
+                        <a class="contact-card" href="mailto:magalibivian@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+                            </span>
+                            <h3>Email</h3>
+                            <span class="contact-card__value">magalibivian@gmail.com</span>
+                            <p class="contact-card__blurb">Para pedidos a medida o consultas más largas.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Preguntas frecuentes (ex "Ayuda") ===== -->
+            <section class="section section-alt">
+                <div class="container">
+                    <div class="section-head" style="justify-content:center; text-align:center;">
+                        <div style="margin:0 auto;">
+                            <span class="eyebrow" style="justify-content:center;">Antes de escribirnos</span>
+                            <h2>Preguntas frecuentes</h2>
+                            <p style="margin-left:auto; margin-right:auto;">Envíos, cambios, cuidado de los materiales y todo lo que necesitás saber antes de comprar.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary>
+                                ¿Hacen envíos a todo el país?
+                                <span class="faq-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                                </span>
+                            </summary>
+                            <p class="faq-item__answer">Sí, enviamos a todo el país por correo, a cargo del comprador. En Buenos Aires coordinamos entrega en mano o en un punto de encuentro.</p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Puedo cambiar o devolver un producto?
+                                <span class="faq-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                                </span>
+                            </summary>
+                            <p class="faq-item__answer">Tenés 7 días desde que lo recibís para hacer un cambio, siempre que el producto no haya sido usado y conserve su etiqueta.</p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Cómo cuido mi bolso de cuero o tela?
+                                <span class="faq-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                                </span>
+                            </summary>
+                            <p class="faq-item__answer">Evitá la humedad y el sol directo. Para el cuero usamos productos naturales; las piezas de tela se lavan a mano con agua fría.</p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Cuánto tardan en hacer un pedido a medida?
+                                <span class="faq-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                                </span>
+                            </summary>
+                            <p class="faq-item__answer">Entre 1 y 3 semanas, según la pieza y la temporada. Te avisamos el tiempo estimado al confirmar el pedido.</p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Qué medios de pago aceptan?
+                                <span class="faq-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                                </span>
+                            </summary>
+                            <p class="faq-item__answer">Transferencia, efectivo y Mercado Pago. Para pedidos que requieren envío, pedimos una seña del 50%.</p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Hacen piezas personalizadas?
+                                <span class="faq-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                                </span>
+                            </summary>
+                            <p class="faq-item__answer">Sí, podés elegir color, tamaño y algunos detalles. Escribinos por WhatsApp o Instagram para coordinarlo.</p>
+                        </details>
                     </div>
                 </div>
             </section>
@@ -84,7 +186,6 @@
                         <a href="all_products.html">Productos</a>
                         <a href="charms.html">Charms</a>
                         <a href="ubicacion.html">Ubicación</a>
-                        <a href="ayuda.html">Ayuda</a>
                     </div>
                     <div class="footer-col">
                         <h4>Contacto</h4>

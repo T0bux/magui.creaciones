@@ -192,3 +192,165 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeAllMegaMenus();
 });
+
+// ============================
+// Detalle de bolsos y variantes de color
+// ============================
+const productDetailDialog = document.getElementById("productDetailDialog");
+
+if (productDetailDialog) {
+    const productDetailTitle = document.getElementById("productDetailTitle");
+    const productDetailDescription = document.getElementById("productDetailDescription");
+    const productDetailPrice = document.getElementById("productDetailPrice");
+    const productDetailVisual = productDetailDialog.querySelector(".product-detail__visual");
+    const productDetailImage = productDetailDialog.querySelector(".product-detail__image");
+    const productDetailColorButtons = productDetailDialog.querySelectorAll(".product-color");
+    const productDetailPatternButtons = productDetailDialog.querySelectorAll(".product-pattern");
+    const productPhotoVariants = {
+        "grande:terracota:rayas": "imagen/bolsos/bolso_grande_naranja.jpeg",
+        "grande:terracota:floreado": "imagen/bolsos/bolso_grande_naranja_flores.jpeg",
+        "grande:verde-herbal:rayas": "imagen/bolsos/bolso_grande_verdemusgo.jpeg",
+        "grande:verde-herbal:floreado": "imagen/bolsos/bolso_grande_verdemusgo_flores.jpeg",
+        "grande:rosa:rayas": "imagen/bolsos/bolso_grande_rosa.jpeg",
+        "grande:rosa:floreado": "imagen/bolsos/bolso_grande_rosa_flores.jpeg",
+        "grande:cielo-tierra:rayas": "imagen/bolsos/bolso_grande_marron_celeste.jpeg",
+        "grande:cielo-tierra:floreado": "imagen/bolsos/bolso_grande_marron_celeste_flores.jpeg",
+        "grande:marino:rayas": "imagen/bolsos/bolso_grande.jpeg",
+        "mediano:terracota:rayas": "imagen/bolsos/bolso_mediano_naranja_rayas.jpeg",
+        "mediano:terracota:floreado": "imagen/bolsos/bolso_mediano_naranja_flores.jpeg",
+        "mediano:verde-herbal:rayas": "imagen/bolsos/bolso_mediano_verdemusgo.jpeg",
+        "mediano:verde-herbal:floreado": "imagen/bolsos/bolso_mediano_verdemusgo_flores.jpeg",
+        "mediano:cielo-tierra:rayas": "imagen/bolsos/bolso_mediano_marron_celeste.jpeg",
+        "mediano:cielo-tierra:floreado": "imagen/bolsos/bolso_mediano_marron_celeste_flores.jpeg",
+        "mediano:marino:rayas": "imagen/bolsos/bolso_mediano.jpeg",
+        "chico:terracota:floreado": "imagen/bolsos/bolso_chico_naranja_flores.jpeg",
+        "chico:verde-herbal:floreado": "imagen/bolsos/bolso_chico_verdemusgo_flores.jpeg",
+        "chico:cielo-tierra:rayas": "imagen/bolsos/bolso_chico_marron_celeste.jpeg",
+        "chico:marino:rayas": "imagen/bolsos/bolso_chico_o_cartuchera.jpeg"
+    };
+    const productColorNames = {
+        terracota: "Terracota",
+        "verde-herbal": "Verde Herbal",
+        rosa: "Rosa",
+        marino: "Marino",
+        "cielo-tierra": "Cielo y Tierra"
+    };
+    const productPatternNames = {
+        rayas: "Rayas",
+        floreado: "Floreado"
+    };
+    const productDetails = {
+        grande: {
+            title: "Bolso Grande",
+            description: "Tote grande de lino con doble manija de cuero curtido natural. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.",
+            price: "$ 24.500"
+        },
+        mediano: {
+            title: "Bolso Mediano",
+            description: "Tote estructurado de algodón grueso, con base reforzada. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.",
+            price: "$ 25.800"
+        },
+        chico: {
+            title: "Bolso Chico",
+            description: "Bolso chico y liviano, práctico para llevar lo esencial a mano. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.",
+            price: "$ 20.100"
+        }
+    };
+
+    const hasProductPhoto = (model, color, pattern) => Boolean(productPhotoVariants[`${model}:${color}:${pattern}`]);
+
+    const syncProductOptions = () => {
+        const model = productDetailVisual.dataset.model;
+        const color = productDetailVisual.dataset.color;
+        const pattern = productDetailVisual.dataset.pattern;
+
+        productDetailColorButtons.forEach(button => {
+            const available = Array.from(productDetailPatternButtons).some(option => hasProductPhoto(model, button.dataset.color, option.dataset.pattern));
+            button.hidden = !available;
+            const selected = button.dataset.color === color;
+            button.classList.toggle("is-selected", selected);
+            button.setAttribute("aria-pressed", String(selected));
+        });
+
+        productDetailPatternButtons.forEach(button => {
+            const available = hasProductPhoto(model, color, button.dataset.pattern);
+            button.hidden = !available;
+            const selected = button.dataset.pattern === pattern;
+            button.classList.toggle("is-selected", selected);
+            button.setAttribute("aria-pressed", String(selected));
+        });
+    };
+
+    const updateProductPreview = () => {
+        const model = productDetailVisual.dataset.model;
+        const color = productDetailVisual.dataset.color;
+        const pattern = productDetailVisual.dataset.pattern;
+        const imageSource = productPhotoVariants[`${model}:${color}:${pattern}`];
+
+        if (imageSource) {
+            productDetailImage.src = imageSource;
+            productDetailImage.alt = `${productDetailTitle.textContent}, ${productColorNames[color]}, ${productPatternNames[pattern]}`;
+            productDetailImage.hidden = false;
+            productDetailVisual.classList.add("has-photo");
+            productDetailVisual.setAttribute("aria-label", productDetailImage.alt);
+            return;
+        }
+
+        productDetailImage.removeAttribute("src");
+        productDetailImage.alt = "";
+        productDetailImage.hidden = true;
+        productDetailVisual.classList.remove("has-photo");
+        productDetailVisual.setAttribute("aria-label", `Vista temporal de ${productDetailTitle.textContent}; imagen próximamente`);
+    };
+
+    document.querySelectorAll(".product-card--select[data-product]").forEach(card => {
+        card.addEventListener("click", (event) => {
+            event.preventDefault();
+            const product = productDetails[card.dataset.product];
+            if (!product) return;
+
+            productDetailTitle.textContent = product.title;
+            productDetailDescription.textContent = product.description;
+            productDetailPrice.textContent = product.price;
+            productDetailVisual.dataset.model = card.dataset.product;
+            const firstAvailable = Object.keys(productPhotoVariants).find(key => key.startsWith(`${card.dataset.product}:`));
+            const [model, color, pattern] = firstAvailable.split(":");
+            productDetailVisual.dataset.model = model;
+            productDetailVisual.dataset.color = color;
+            productDetailVisual.dataset.pattern = pattern;
+            syncProductOptions();
+            updateProductPreview();
+            productDetailDialog.showModal();
+        });
+    });
+
+    productDetailColorButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            productDetailVisual.dataset.color = button.dataset.color;
+            const model = productDetailVisual.dataset.model;
+            const pattern = productDetailVisual.dataset.pattern;
+            if (!hasProductPhoto(model, button.dataset.color, pattern)) {
+                productDetailVisual.dataset.pattern = Array.from(productDetailPatternButtons)
+                    .map(option => option.dataset.pattern)
+                    .find(option => hasProductPhoto(model, button.dataset.color, option));
+            }
+            syncProductOptions();
+            updateProductPreview();
+        });
+    });
+
+    productDetailPatternButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            productDetailVisual.dataset.pattern = button.dataset.pattern;
+            syncProductOptions();
+            updateProductPreview();
+        });
+    });
+
+    const closeProductDetail = productDetailDialog.querySelector(".product-detail__close");
+    closeProductDetail.addEventListener("click", () => productDetailDialog.close());
+
+    productDetailDialog.addEventListener("click", (event) => {
+        if (event.target === productDetailDialog) productDetailDialog.close();
+    });
+}

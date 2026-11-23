@@ -127,67 +127,47 @@
                     </div>
 
                     <div class="product-grid">
-                        <article class="product-card">
-                            <div class="product-card__media" data-label="Foto próximamente" style="--product-tint:#DDE3CC;">
-                                <span class="product-tag">$ 24.500</span>
-                            </div>
+                        <a class="product-card product-card--select" href="#detalle-producto" data-product="grande" aria-haspopup="dialog">
+                            <div class="product-card__media product-card__media--photo" data-label="" style="--product-tint:#DDE3CC;"><img class="product-card__photo" src="imagen/bolsos/bolso_grande_naranja.jpeg" alt="Bolso Grande en color naranja, patrón de rayas" loading="lazy"></div>
                             <div class="product-card__body">
-                                <span class="product-card__cat">Bolso tote · Lino crudo</span>
-                                <h3>Bolso Yuyal</h3>
-                                <p>Tote grande de lino con doble manija de cuero curtido natural.</p>
-                                <a href="all_products.html" class="product-card__link">Ver detalle
+                                <span class="product-card__cat">Bolsos · Tamaño grande</span>
+                                <h3>Bolso Grande</h3>
+                                <p>Tote grande de lino con doble manija de cuero curtido natural. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.</p>
+                                <span class="product-card__link">Ver producto
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                                </a>
+                                </span>
                             </div>
-                        </article>
+                        </a>
 
-                        <article class="product-card">
-                            <div class="product-card__media" data-label="Foto próximamente" style="--product-tint:#E9CFC4;">
-                                <span class="product-tag">$ 31.900</span>
-                            </div>
+                        <a class="product-card product-card--select" href="#detalle-producto" data-product="mediano" aria-haspopup="dialog">
+                            <div class="product-card__media product-card__media--photo" data-label="" style="--product-tint:#EADFC2;"><img class="product-card__photo" src="imagen/bolsos/bolso_mediano_naranja_rayas.jpeg" alt="Bolso Mediano en color naranja, patrón de rayas" loading="lazy"></div>
                             <div class="product-card__body">
-                                <span class="product-card__cat">Cartera · Cuero</span>
-                                <h3>Cartera Romero</h3>
-                                <p>Cartera estructurada de cuero vegetal con cierre de broche tallado.</p>
-                                <a href="all_products.html" class="product-card__link">Ver detalle
+                                <span class="product-card__cat">Bolsos · Tamaño mediano</span>
+                                <h3>Bolso Mediano</h3>
+                                <p>Tote estructurado de algodón grueso, con base reforzada. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.</p>
+                                <span class="product-card__link">Ver producto
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                                </a>
+                                </span>
                             </div>
-                        </article>
+                        </a>
 
-                        <article class="product-card">
-                            <div class="product-card__media" data-label="Foto próximamente" style="--product-tint:#C9D6B0;">
-                                <span class="product-tag">$ 19.800</span>
-                            </div>
+                        <a class="product-card product-card--select" href="#detalle-producto" data-product="chico" aria-haspopup="dialog">
+                            <div class="product-card__media product-card__media--photo" data-label="" style="--product-tint:#E9CFC4;"><img class="product-card__photo" src="imagen/bolsos/bolso_chico_naranja_flores.jpeg" alt="Bolso Chico en color naranja, patrón floreado" loading="lazy"></div>
                             <div class="product-card__body">
-                                <span class="product-card__cat">Bolso matero · Yute</span>
-                                <h3>Matero Ceibo</h3>
-                                <p>Bolso matero tejido en yute con bolsillos internos para termo y mate.</p>
-                                <a href="all_products.html" class="product-card__link">Ver detalle
+                                <span class="product-card__cat">Bolsos · Tamaño chico</span>
+                                <h3>Bolso Chico</h3>
+                                <p>Bolso chico y liviano, práctico para llevar lo esencial a mano. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.</p>
+                                <span class="product-card__link">Ver producto
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                                </a>
+                                </span>
                             </div>
-                        </article>
-
-                        <article class="product-card">
-                            <div class="product-card__media" data-label="Foto próximamente" style="--product-tint:#EADFC2;">
-                                <span class="product-tag">$ 27.300</span>
-                            </div>
-                            <div class="product-card__body">
-                                <span class="product-card__cat">Mochila · Algodón encerado</span>
-                                <h3>Mochila Salvia</h3>
-                                <p>Mochila liviana de algodón encerado, ideal para el día a día.</p>
-                                <a href="all_products.html" class="product-card__link">Ver detalle
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                                </a>
-                            </div>
-                        </article>
+                        </a>
                     </div>
                 </div>
             </section>
 
             <!-- ============ CHARMS (destacados) ============ -->
-            <section class="section" id="charms">
+            <section class="section coming-soon-section" id="charms">
                 <div class="container">
                     <div class="section-head">
                         <div>
@@ -263,6 +243,75 @@
                     </div>
                 </div>
             </section>
+        
+
+        <dialog class="product-detail" id="productDetailDialog" aria-labelledby="productDetailTitle">
+            <div class="product-detail__panel">
+                <button class="product-detail__close" type="button" aria-label="Cerrar detalle del producto">×</button>
+                <div class="product-detail__left">
+                    <div class="product-detail__visual" data-model="grande" data-color="terracota" data-pattern="rayas" aria-label="Vista ilustrativa del bolso, imagen próximamente">
+                        <img class="product-detail__image" alt="" hidden>
+                        <div class="bag-illustration" aria-hidden="true">
+                            <span class="bag-illustration__handle"></span>
+                            <span class="bag-illustration__body"><span class="bag-illustration__pocket"></span></span>
+                        </div>
+                        <span class="product-detail__visual-note">Vista de color y patrón · imagen próximamente</span>
+                    </div>
+                    <div class="product-detail__patterns">
+                        <span class="product-detail__label">Elegí un patrón</span>
+                        <div class="product-pattern-list">
+                            <button class="product-pattern is-selected" type="button" data-pattern="rayas" aria-pressed="true">
+                                <span class="product-pattern__sample product-pattern__sample--stripes" aria-hidden="true"></span>
+                                <span>Rayas</span>
+                            </button>
+                            <button class="product-pattern" type="button" data-pattern="floreado" aria-pressed="false">
+                                <span class="product-pattern__sample product-pattern__sample--floral" aria-hidden="true"></span>
+                                <span>Floreado</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail__content">
+                    <div class="product-detail__heading">
+                        <div>
+                            <span class="eyebrow">Bolsos, Mochilas y Bandoleras</span>
+                            <h2 id="productDetailTitle">Bolso Grande</h2>
+                        </div>
+                        <div class="product-detail__price" aria-label="Precio del producto">
+                            <span>Precio</span>
+                            <strong id="productDetailPrice">$ 24.500</strong>
+                        </div>
+                    </div>
+                    <p class="product-detail__description" id="productDetailDescription">Amplio y cómodo, con espacio para acompañarte durante todo el día.</p>
+                    <div class="product-detail__colors">
+                        <span class="product-detail__label">Elegí un color</span>
+                        <button class="product-color is-selected" type="button" data-color="terracota" aria-pressed="true">
+                            <span class="product-color__swatch product-color__swatch--terracota" aria-hidden="true"></span>
+                            <span>Terracota</span>
+                        </button>
+                        <button class="product-color" type="button" data-color="verde-herbal" aria-pressed="false">
+                            <span class="product-color__swatch product-color__swatch--herbal" aria-hidden="true"></span>
+                            <span>Verde Herbal</span>
+                        </button>
+                        <button class="product-color" type="button" data-color="rosa" aria-pressed="false">
+                            <span class="product-color__swatch product-color__swatch--rosa" aria-hidden="true"></span>
+                            <span>Rosa</span>
+                        </button>
+                        <button class="product-color" type="button" data-color="marino" aria-pressed="false">
+                            <span class="product-color__swatch product-color__swatch--marino" aria-hidden="true"></span>
+                            <span>Marino</span>
+                        </button>
+                        <button class="product-color" type="button" data-color="cielo-tierra" aria-pressed="false">
+                            <span class="product-color__swatch product-color__swatch--cielo-tierra" aria-hidden="true"></span>
+                            <span>Cielo y Tierra</span>
+                        </button>
+                    </div>
+                    <a class="product-detail__contact" href="contact.html">Consultar este producto
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </dialog>
         </main>
 
         <footer>

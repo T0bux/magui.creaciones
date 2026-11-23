@@ -954,32 +954,6 @@ nav.is-scrolled {
     opacity: 0.65;
 }
 
-.product-tag {
-    position: absolute;
-    top: 0.9rem;
-    right: 0.9rem;
-    background: var(--cream-soft);
-    color: var(--sage-dark);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    padding: 0.45rem 0.7rem;
-    border-radius: var(--radius-sm);
-    transform: rotate(6deg);
-    box-shadow: 0 10px 18px -8px rgba(var(--shadow-color), 0.35);
-}
-
-.product-tag::before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 6px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--cream);
-    border: 1px solid var(--line);
-}
-
 .product-card__body {
     padding: 1.3rem 1.3rem 1.5rem;
 }
@@ -1045,13 +1019,6 @@ nav.is-scrolled {
 
     .product-card {
         border-radius: var(--radius-sm);
-    }
-
-    .product-tag {
-        top: 0.55rem;
-        right: 0.55rem;
-        font-size: 0.62rem;
-        padding: 0.32rem 0.5rem;
     }
 
     .product-card__media::after {
@@ -1396,30 +1363,6 @@ nav.is-scrolled {
     font: 400 clamp(1.6rem, 2.8vw, 2.25rem)/1.12 var(--font-display);
 }
 
-.product-detail__price {
-    flex: 0 0 auto;
-    display: grid;
-    gap: 0.35rem;
-    padding: 0.85rem 1rem;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    background: var(--cream);
-    text-align: right;
-}
-
-.product-detail__price span {
-    color: var(--ink-soft);
-    font: 0.63rem var(--font-mono);
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-}
-
-.product-detail__price strong {
-    color: var(--sage-dark);
-    font: 500 1.12rem var(--font-body);
-    white-space: nowrap;
-}
-
 .product-detail__description {
     max-width: 48ch;
     margin: 1.15rem 0 1.5rem;
@@ -1620,12 +1563,6 @@ nav.is-scrolled {
         flex-direction: column;
     }
 
-    .product-detail__price {
-        width: 100%;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        text-align: left;
-    }
 }
 
 /* =========================================================
@@ -1729,17 +1666,6 @@ nav.is-scrolled {
     text-transform: uppercase;
     color: var(--sage);
     margin-top: 0.3rem;
-}
-
-.charm-card__price {
-    display: inline-block;
-    margin-top: 0.7rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--clay);
-    background: var(--blush);
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
 }
 
 /* =========================================================

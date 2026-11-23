@@ -201,7 +201,6 @@ const productDetailDialog = document.getElementById("productDetailDialog");
 if (productDetailDialog) {
     const productDetailTitle = document.getElementById("productDetailTitle");
     const productDetailDescription = document.getElementById("productDetailDescription");
-    const productDetailPrice = document.getElementById("productDetailPrice");
     const productDetailVisual = productDetailDialog.querySelector(".product-detail__visual");
     const productDetailImage = productDetailDialog.querySelector(".product-detail__image");
     const productDetailColorButtons = productDetailDialog.querySelectorAll(".product-color");
@@ -242,18 +241,15 @@ if (productDetailDialog) {
     const productDetails = {
         grande: {
             title: "Bolso Grande",
-            description: "Tote grande de lino con doble manija de cuero curtido natural. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.",
-            price: "$ 24.500"
+            description: "Tote grande de lino con doble manija de cuero curtido natural. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales."
         },
         mediano: {
             title: "Bolso Mediano",
-            description: "Tote estructurado de algodón grueso, con base reforzada. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.",
-            price: "$ 25.800"
+            description: "Tote estructurado de algodón grueso, con base reforzada. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales."
         },
         chico: {
             title: "Bolso Chico",
-            description: "Bolso chico y liviano, práctico para llevar lo esencial a mano. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales.",
-            price: "$ 20.100"
+            description: "Bolso chico y liviano, práctico para llevar lo esencial a mano. Tela y cuero ecológico. Impermeables por dentro. Con bolsillos en ambos laterales."
         }
     };
 
@@ -311,7 +307,6 @@ if (productDetailDialog) {
 
             productDetailTitle.textContent = product.title;
             productDetailDescription.textContent = product.description;
-            productDetailPrice.textContent = product.price;
             productDetailVisual.dataset.model = card.dataset.product;
             const firstAvailable = Object.keys(productPhotoVariants).find(key => key.startsWith(`${card.dataset.product}:`));
             const [model, color, pattern] = firstAvailable.split(":");
